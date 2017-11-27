@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/flexboxgrid2.css">
+  <link rel="stylesheet" href="css/selectric.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="fonts/hkgrotesk.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="" id="registration-form" class="form">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="field">
+          <label for="firstName">First Name</label>
+          <input class="input" type="text" id="firstName" name="firstName" placeholder="First Name" data-validation="length alphanumeric"
+            data-validation-length="3-12" data-validation-error-msg="First name has to be an alphanumeric value (3-12 chars)">
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="field">
+          <label for="lastName">Last Name</label>
+          <input class="input" type="text" id="lastName" name="lastName" placeholder="Last Name" data-validation="length alphanumeric"
+            data-validation-length="3-12" data-validation-error-msg="Last name has to be an alphanumeric value (3-12 chars)"
+            data-validation-help="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae ligula dolor. ">
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input class="input" type="text" id="email" name="email" placeholder="Email Address" data-validation="email">
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="field">
+          <label for="phone">Telephone</label>
+          <input class="input" type="text" id="phone" name="phone" placeholder="Telephone" data-validation="custom" data-validation-regexp="^((\+7|7|8)+([0-9]){10})$">
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="field">
+          <label for="reason">Select a Reason</label>
+          <select id="reason" name="reason" data-validation="required">
+            <option value="" disabled selected>Select a Reason</option>
+            <option value="advice">I want to get advice</option>
+            <option value="response">I want to leave a response</option>
+            <option value="complain">I want to complain</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea class="input" type="text" id="message" name="message" placeholder="Message"></textarea>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="field">
+          <button class="btn" type="submit">Validate</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+  <script src="js/jquery.selectric.js"></script>
+  <script>
+    $(function () {
+      $.validate({
+        // modules: 'location, date, security, file',
+      });
+      $('#reason').selectric();
+    });
+  </script>
+</body>
+
+</html>

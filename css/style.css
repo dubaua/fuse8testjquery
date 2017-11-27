@@ -1,0 +1,124 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  max-width: 520px;
+  font-family: "HK Grotesk", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #222629;
+}
+
+.form label {
+  display: none;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  color: #222629;
+  width: 100%;
+  font-size: 16px;
+  font-style: italic;
+  border-bottom: 1px solid #ced3d8;
+  padding: 9px 0;
+}
+
+.input:focus {
+  border-color: #03c1de;
+  font-style: normal;
+  outline: none;
+}
+
+.input.error {
+  border-color: #ff4f00;
+  font-style: normal;
+  background: url("./error.png") right center no-repeat;
+}
+
+.input.valid {
+  border-color: #8ac53f;
+  font-style: normal;
+  background: url("./success.png") right center no-repeat;
+}
+
+.input::-webkit-input-placeholder {
+  color: #ced3d8;
+}
+
+.input::-moz-placeholder {
+  color: #ced3d8;
+}
+
+.input:-ms-input-placeholder {
+  color: #ced3d8;
+}
+
+.input:-moz-placeholder {
+  color: #ced3d8;
+}
+
+.help-block {
+  background: white;
+  border-bottom-style: solid;
+  border-bottom-width: 9px;
+  border-color: #03c1de;
+  bottom: 100%;
+  box-shadow: 0 0 0 2px #f0f2f3;
+  color: #444749;
+  display: none;
+  font-size: 14px;
+  line-height: 1.5;
+  left: 0;
+  padding: 16px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.help-block:after {
+  position: absolute;
+  content: "";
+  border-top: 9px solid;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top-color: inherit;
+  bottom: -18px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.help-block.form-error {
+  border-color: #ff4f00;
+}
+
+.input.error:focus ~ .help-block.form-error {
+  display: inherit;
+}
+
+.input.has-help-txt:focus ~ .help-block.form-error {
+  display: none;
+}
+
+.btn {
+  background: none;
+  border: none;
+  color: rgb(3, 193, 222);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  padding: 9px 0;
+  text-align: left;
+  text-transform: uppercase;
+  width: 100%;
+}
